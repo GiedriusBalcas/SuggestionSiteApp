@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SuggestionAppUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8df045bbf3de38be8fe2171014fecbe917c1809")]
 [assembly: System.Reflection.AssemblyProductAttribute("SuggestionAppUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SuggestionAppUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

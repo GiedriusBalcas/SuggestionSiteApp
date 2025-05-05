@@ -1,7 +1,44 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{31969AE6-EF92-43E7-B216-F6494CD262EA}|SuggestionAppLibrary\\SuggestionAppLibrary.csproj|c:\\users\\giedr\\desktop\\importsnt\\coding\\projects\\c#\\blazor\\suggestionapp\\suggestionapplibrary\\models\\suggestionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31969AE6-EF92-43E7-B216-F6494CD262EA}|SuggestionAppLibrary\\SuggestionAppLibrary.csproj|solutionrelative:suggestionapplibrary\\models\\suggestionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31969AE6-EF92-43E7-B216-F6494CD262EA}|SuggestionAppLibrary\\SuggestionAppLibrary.csproj|c:\\users\\giedr\\desktop\\importsnt\\coding\\projects\\c#\\blazor\\suggestionapp\\suggestionapplibrary\\models\\basicusermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31969AE6-EF92-43E7-B216-F6494CD262EA}|SuggestionAppLibrary\\SuggestionAppLibrary.csproj|solutionrelative:suggestionapplibrary\\models\\basicusermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31969AE6-EF92-43E7-B216-F6494CD262EA}|SuggestionAppLibrary\\SuggestionAppLibrary.csproj|c:\\users\\giedr\\desktop\\importsnt\\coding\\projects\\c#\\blazor\\suggestionapp\\suggestionapplibrary\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31969AE6-EF92-43E7-B216-F6494CD262EA}|SuggestionAppLibrary\\SuggestionAppLibrary.csproj|solutionrelative:suggestionapplibrary\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31969AE6-EF92-43E7-B216-F6494CD262EA}|SuggestionAppLibrary\\SuggestionAppLibrary.csproj|c:\\users\\giedr\\desktop\\importsnt\\coding\\projects\\c#\\blazor\\suggestionapp\\suggestionapplibrary\\models\\categorymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31969AE6-EF92-43E7-B216-F6494CD262EA}|SuggestionAppLibrary\\SuggestionAppLibrary.csproj|solutionrelative:suggestionapplibrary\\models\\categorymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31969AE6-EF92-43E7-B216-F6494CD262EA}|SuggestionAppLibrary\\SuggestionAppLibrary.csproj|c:\\users\\giedr\\desktop\\importsnt\\coding\\projects\\c#\\blazor\\suggestionapp\\suggestionapplibrary\\globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31969AE6-EF92-43E7-B216-F6494CD262EA}|SuggestionAppLibrary\\SuggestionAppLibrary.csproj|solutionrelative:suggestionapplibrary\\globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A018F32E-44B3-41B5-BBC3-4962968CDADE}|SuggestionAppUI\\SuggestionAppUI.csproj|c:\\users\\giedr\\desktop\\importsnt\\coding\\projects\\c#\\blazor\\suggestionapp\\suggestionappui\\suggestionappui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A018F32E-44B3-41B5-BBC3-4962968CDADE}|SuggestionAppUI\\SuggestionAppUI.csproj|solutionrelative:suggestionappui\\suggestionappui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31969AE6-EF92-43E7-B216-F6494CD262EA}|SuggestionAppLibrary\\SuggestionAppLibrary.csproj|c:\\users\\giedr\\desktop\\importsnt\\coding\\projects\\c#\\blazor\\suggestionapp\\suggestionapplibrary\\suggestionapplibrary.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{31969AE6-EF92-43E7-B216-F6494CD262EA}|SuggestionAppLibrary\\SuggestionAppLibrary.csproj|solutionrelative:suggestionapplibrary\\suggestionapplibrary.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A018F32E-44B3-41B5-BBC3-4962968CDADE}|SuggestionAppUI\\SuggestionAppUI.csproj|c:\\users\\giedr\\desktop\\importsnt\\coding\\projects\\c#\\blazor\\suggestionapp\\suggestionappui\\registerservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A018F32E-44B3-41B5-BBC3-4962968CDADE}|SuggestionAppUI\\SuggestionAppUI.csproj|solutionrelative:suggestionappui\\registerservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A018F32E-44B3-41B5-BBC3-4962968CDADE}|SuggestionAppUI\\SuggestionAppUI.csproj|c:\\users\\giedr\\desktop\\importsnt\\coding\\projects\\c#\\blazor\\suggestionapp\\suggestionappui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A018F32E-44B3-41B5-BBC3-4962968CDADE}|SuggestionAppUI\\SuggestionAppUI.csproj|solutionrelative:suggestionappui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,6 +63,123 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BasicUserModel.cs",
+              "DocumentMoniker": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\SuggestionAppLibrary\\Models\\BasicUserModel.cs",
+              "RelativeDocumentMoniker": "SuggestionAppLibrary\\Models\\BasicUserModel.cs",
+              "ToolTip": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\SuggestionAppLibrary\\Models\\BasicUserModel.cs",
+              "RelativeToolTip": "SuggestionAppLibrary\\Models\\BasicUserModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T10:22:09.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\SuggestionAppLibrary\\Models\\UserModel.cs",
+              "RelativeDocumentMoniker": "SuggestionAppLibrary\\Models\\UserModel.cs",
+              "ToolTip": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\SuggestionAppLibrary\\Models\\UserModel.cs",
+              "RelativeToolTip": "SuggestionAppLibrary\\Models\\UserModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T10:21:43.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SuggestionModel.cs",
+              "DocumentMoniker": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\SuggestionAppLibrary\\Models\\SuggestionModel.cs",
+              "RelativeDocumentMoniker": "SuggestionAppLibrary\\Models\\SuggestionModel.cs",
+              "ToolTip": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\SuggestionAppLibrary\\Models\\SuggestionModel.cs",
+              "RelativeToolTip": "SuggestionAppLibrary\\Models\\SuggestionModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAmwA0AAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T09:55:51.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GlobalUsings.cs",
+              "DocumentMoniker": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\SuggestionAppLibrary\\GlobalUsings.cs",
+              "RelativeDocumentMoniker": "SuggestionAppLibrary\\GlobalUsings.cs",
+              "ToolTip": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\SuggestionAppLibrary\\GlobalUsings.cs",
+              "RelativeToolTip": "SuggestionAppLibrary\\GlobalUsings.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T09:54:34.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SuggestionAppUI",
+              "DocumentMoniker": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\SuggestionAppUI\\SuggestionAppUI.csproj",
+              "RelativeDocumentMoniker": "SuggestionAppUI\\SuggestionAppUI.csproj",
+              "ToolTip": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\SuggestionAppUI\\SuggestionAppUI.csproj",
+              "RelativeToolTip": "SuggestionAppUI\\SuggestionAppUI.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-05T09:52:39.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SuggestionAppLibrary",
+              "DocumentMoniker": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\SuggestionAppLibrary\\SuggestionAppLibrary.csproj",
+              "RelativeDocumentMoniker": "SuggestionAppLibrary\\SuggestionAppLibrary.csproj",
+              "ToolTip": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\SuggestionAppLibrary\\SuggestionAppLibrary.csproj",
+              "RelativeToolTip": "SuggestionAppLibrary\\SuggestionAppLibrary.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-05T09:52:21.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoryModel.cs",
+              "DocumentMoniker": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\SuggestionAppLibrary\\Models\\CategoryModel.cs",
+              "RelativeDocumentMoniker": "SuggestionAppLibrary\\Models\\CategoryModel.cs",
+              "ToolTip": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\SuggestionAppLibrary\\Models\\CategoryModel.cs",
+              "RelativeToolTip": "SuggestionAppLibrary\\Models\\CategoryModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T09:51:16.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RegisterServices.cs",
+              "DocumentMoniker": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\SuggestionAppUI\\RegisterServices.cs",
+              "RelativeDocumentMoniker": "SuggestionAppUI\\RegisterServices.cs",
+              "ToolTip": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\SuggestionAppUI\\RegisterServices.cs",
+              "RelativeToolTip": "SuggestionAppUI\\RegisterServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T09:40:48.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\SuggestionAppUI\\Program.cs",
+              "RelativeDocumentMoniker": "SuggestionAppUI\\Program.cs",
+              "ToolTip": "C:\\Users\\giedr\\Desktop\\importsnt\\coding\\projects\\C#\\blazor\\SuggestionApp\\SuggestionAppUI\\Program.cs",
+              "RelativeToolTip": "SuggestionAppUI\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T09:39:24.943Z",
+              "EditorCaption": ""
             }
           ]
         }
