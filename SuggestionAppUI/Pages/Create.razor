@@ -1,0 +1,24 @@
+﻿@page "/Create"
+
+@using SuggestionAppUI.Models
+
+@inject ICategoryData categoryData
+@inject ISuggestionData suggestionData
+@inject IUserData userData
+@inject NavigationManager navManager
+
+
+@code {
+	private CreateSuggestionModel suggestion = new();
+	private List<CategoryModel> categories;
+	private UserModel loggedInUser;
+
+	protected async override Task OnInitializedAsync()
+	{
+		categories = await categoryData.GetAllCategories();
+		loggedInUser = await userData.GetUserFromAuthentication("abc-123");
+
+		// 16 --- 9:27
+
+	}
+}
