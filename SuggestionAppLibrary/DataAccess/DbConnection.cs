@@ -2,7 +2,7 @@
 using MongoDB.Driver;
 
 namespace SuggestionAppLibrary.DataAccess;
-public class DbConnection
+public class DbConnection : IDbConnection
 {
    private readonly IConfiguration _config;
    private readonly IMongoDatabase _database;
@@ -12,7 +12,7 @@ public class DbConnection
    public string StatusCollectionName { get; private set; } = "statuses";
    public string UserCollectionName { get; private set; } = "users";
    public string SuggestionCollectionName { get; private set; } = "suggestions";
-   
+
    public MongoClient Client { get; private set; }
    public IMongoCollection<CategoryModel> CategoryCollection { get; private set; }
    public IMongoCollection<StatusModel> StatusCollection { get; private set; }
