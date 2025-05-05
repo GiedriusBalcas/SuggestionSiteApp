@@ -1,4 +1,4 @@
-﻿namespace SuggestionAppLibrary.DataAccess;
+﻿namespace SuggestionAppLibrary.DataAccess.MongoDb;
 public class MongoUserData : IUserData
 {
    private readonly IMongoCollection<UserModel> _users;
@@ -14,7 +14,7 @@ public class MongoUserData : IUserData
       return results.ToList();
    }
 
-   public async Task<UserModel> GetUserByIdAsync(string id)
+   public async Task<UserModel> GetUser(string id)
    {
       var results = await _users.FindAsync(u => u.Id == id);
       return results.FirstOrDefault();

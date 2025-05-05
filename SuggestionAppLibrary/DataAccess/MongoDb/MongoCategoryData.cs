@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 
-namespace SuggestionAppLibrary.DataAccess;
+namespace SuggestionAppLibrary.DataAccess.MongoDb;
 public class MongoCategoryData : ICategoryData
 {
-   private const string _cacheName = "CategoryData";
+   private const string CacheName = "CategoryData";
    private readonly IMemoryCache _cache;
    private readonly IMongoCollection<CategoryModel> _categories;
 
@@ -15,14 +15,14 @@ public class MongoCategoryData : ICategoryData
 
    public async Task<List<CategoryModel>> GetAllCategories()
    {
-      var output = _cache.Get<List<CategoryModel>>(_cacheName);
+      var output = _cache.Get<List<CategoryModel>>(CacheName);
 
       if (output == null || output.Count == 0)
       {
          var results = await _categories.FindAsync(_ => true);
          output = results.ToList();
 
-         _cache.Set(_cacheName, output, TimeSpan.FromDays(1));
+         _cache.Set(CacheName, output, TimeSpan.FromDays(1));
       }
 
       return output;
