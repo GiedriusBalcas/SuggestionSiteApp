@@ -33,7 +33,7 @@ public class MongoSuggestionData : ISuggestionData
    public async Task<List<SuggestionModel>> GetAllApprovedSuggestion()
    {
       var output = await GetAllSuggestions();
-      return output.Where(s => s.ApprovedForRelease = true).ToList();
+      return output.Where(s => s.ApprovedForRelease == true).ToList();
    }
    public async Task<SuggestionModel> GetSuggestion(string id)
    {
@@ -43,9 +43,8 @@ public class MongoSuggestionData : ISuggestionData
    public async Task<List<SuggestionModel>> GetAllSuggestionsWaitingForApproval()
    {
       var output = await GetAllSuggestions();
-      return output.Where(x =>
-         x.ApprovedForRelease == false
-         && x.Rejected == false).ToList();
+      output = output.Where(x => !x.ApprovedForRelease && !x.Rejected).ToList();
+      return output;
    }
    public async Task UpdateSuggestion(SuggestionModel suggestion)
    {
