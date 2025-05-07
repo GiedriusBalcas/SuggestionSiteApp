@@ -36,7 +36,7 @@
 				<div class="suggestion-entry">
 					<div class="@GetVoteClass(s)" @onclick="() => VoteUp(s)">
 						<div class="text-uppercase">@GetUpvoteTopText(s)</div>
-						<span class="oi oi-caret-top" style="font-size: 3rem;"></span>
+						<span class="oi oi-caret-top" style="font-size: 2rem;"></span>
 						<div class="text-uppercase">@GetUpvoteBottomText(s)</div>
 					</div>
 					<div class="suggestion-entry-text">
@@ -58,26 +58,26 @@
 			</Virtualize>
 		}
 	</div>
-	<div>
+	<div class="col-md-4 col-xl-3">
 		@if(categories is not null)
 		{
-			<div>
-				<span>Category</span>
-				<div @onclick="(() => OnCategoryClick())">All</div>
+			<div class="categories">
+				<span class="text-uppercase fw-bold">Category</span>
+				<div class="@GetSelectedCategory()" @onclick="(() => OnCategoryClick())">All</div>
 				@foreach(var c in categories)
 				{
-					<div @onclick="(() => OnCategoryClick(c.CategoryName))">@c.CategoryName</div>
+					<div class="@GetSelectedCategory(c.CategoryName)" @onclick="(() => OnCategoryClick(c.CategoryName))">@c.CategoryName</div>
 				}
 			</div>
 		}
 		@if(statuses is not null)
 		{
-			<div>
-				<span>Status</span>
-				<div @onclick="(() => OnStatusClick())">All</div>
+			<div class="statuses">
+				<span class="text-uppercase fw-bold">Status</span>
+				<div class="@GetSelectedStatus()" @onclick="(() => OnStatusClick())">All</div>
 				@foreach (var s in statuses)
 				{
-					<div @onclick="(() => OnStatusClick(s.StatusName))">@s.StatusName</div>
+					<div class="@GetSelectedStatus(s.StatusName)" @onclick="(() => OnStatusClick(s.StatusName))">@s.StatusName</div>
 				}
 			</div>
 		}
@@ -360,7 +360,7 @@
 		{
 			return "suggestion-entry-status-none";
 		}
-		
+
 		string output = suggestion.SuggestionStatus.StatusName switch
 		{
 			"Completed" => "suggestion-entry-status-completed",
@@ -371,6 +371,23 @@
 		};
 
 		return output;
+	}
+	
+	private string GetSelectedCategory(string category = "All")
+	{
+		if(category == selectedCategory)
+		{
+			return "selected-category";
+		}
+		return "";
+	}
 
+	private string GetSelectedStatus(string status = "All")
+	{
+		if (status == selectedStatus)
+		{
+			return "selected-status";
+		}
+		return "";
 	}
 }
