@@ -51,6 +51,7 @@ public class MongoSuggestionData : ISuggestionData
       await _suggestions.ReplaceOneAsync(s => s.Id == suggestion.Id, suggestion);
       _cache.Remove(CacheName);
    }
+
    public async Task UpvoteSuggestion(string suggestionId, string userId)
    {
       var client = _database.Client;
@@ -95,7 +96,7 @@ public class MongoSuggestionData : ISuggestionData
       catch
       {
          await session.AbortTransactionAsync();
-         throw;
+         //throw;
       }
    }
    public async Task CreateSuggestion(SuggestionModel suggestion)
