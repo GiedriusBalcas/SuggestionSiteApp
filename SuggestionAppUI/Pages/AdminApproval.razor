@@ -10,7 +10,7 @@
 <div class="row">
     <div class="suggestion-count col-8 mt-2">@_submissions?.Count Submissions</div>
     <div class="col-4 close-button-section">
-        <button class="btn btn-close" @onclick="ClosePage"></button>
+        <button class="btn btn-close" style="color: aliceblue;" @onclick="ClosePage"></button>
     </div>
 </div>
 
@@ -27,13 +27,13 @@
                 <div>
                     @if (_currentEditingTitle == s.Id)
                     {
-                        <EditForm Model="@_editedTitle" OnSubmit="() => SaveTitle(s)">
-                            <InputText @bind-Value="_editedTitle" />
-                            <button type="submit">
+                        <EditForm class="approval-edit-form" Model="@_editedTitle" OnSubmit="() => SaveTitle(s)">
+                            <InputText class="form-control approval-edit-field" @bind-Value="_editedTitle" />
+                            <button class="btn" type="submit">
                                 <span class="oi oi-check submission-edit-approve"></span>
                             </button>
-                            <button type="button" @onclick="() => _currentEditingTitle = string.Empty">
-                                <span class="oi oi-x"></span>
+                            <button class="btn" type="button" @onclick="() => _currentEditingTitle = string.Empty">
+                                <span class="oi oi-x submission-edit-reject"></span>
                             </button>
                         </EditForm>
                     }
@@ -57,7 +57,7 @@
                             <button class="btn " type="submit">
                                 <span class="oi oi-check submission-edit-approve"></span>
                             </button>
-                            <button type="button" class="btn" @onclick="() => _currentEditingDescription = string.Empty">
+                            <button class="btn" type="button" @onclick="() => _currentEditingDescription = string.Empty">
                                 <span class="oi oi-x submission-edit-reject"></span>
                             </button>
                         </EditForm>

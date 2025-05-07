@@ -5,17 +5,16 @@
 html, body {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
-    color: aliceblue;
 }
 
 h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    color: #ffffff;
-} 
+}
 
 body {
-    background: url(../images/sampleBackgroundImage.png) repeat center center fixed;
+    background: url(../images/sampleBackgroundImage.jpg) repeat center center fixed;
     background-size: auto;
     height: 100%;
 }
@@ -24,19 +23,24 @@ h1 {
     padding-top: 1rem;
 }
 
-h1:focus {
-    outline: none;
-}
+    h1:focus {
+        outline: none;
+    }
 
 a, .btn-link {
     color: #ffffff;
     text-decoration: none;
 }
 
+    a:hover, .btn-link:hover {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+
 .btn-primary {
-    color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
+    color: #fff;
 }
 
 .content {
@@ -44,7 +48,7 @@ a, .btn-link {
 }
 
 .valid.modified:not([type=checkbox]) {
-    /*outline: 1px solid #26b050;*/
+    outline: 1px solid #26b050;
 }
 
 .invalid {
@@ -58,6 +62,7 @@ a, .btn-link {
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
+    box-shadow: 0 -1px 2px #000000;
     box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
     display: none;
     left: 0;
@@ -76,14 +81,13 @@ a, .btn-link {
 
 .blazor-error-boundary {
     background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTYiIGhlaWdodD0iNDkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIG92ZXJmbG93PSJoaWRkZW4iPjxkZWZzPjxjbGlwUGF0aCBpZD0iY2xpcDAiPjxyZWN0IHg9IjIzNSIgeT0iNTEiIHdpZHRoPSI1NiIgaGVpZ2h0PSI0OSIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMzUgLTUxKSI+PHBhdGggZD0iTTI2My41MDYgNTFDMjY0LjcxNyA1MSAyNjUuODEzIDUxLjQ4MzcgMjY2LjYwNiA1Mi4yNjU4TDI2Ny4wNTIgNTIuNzk4NyAyNjcuNTM5IDUzLjYyODMgMjkwLjE4NSA5Mi4xODMxIDI5MC41NDUgOTIuNzk1IDI5MC42NTYgOTIuOTk2QzI5MC44NzcgOTMuNTEzIDI5MSA5NC4wODE1IDI5MSA5NC42NzgyIDI5MSA5Ny4wNjUxIDI4OS4wMzggOTkgMjg2LjYxNyA5OUwyNDAuMzgzIDk5QzIzNy45NjMgOTkgMjM2IDk3LjA2NTEgMjM2IDk0LjY3ODIgMjM2IDk0LjM3OTkgMjM2LjAzMSA5NC4wODg2IDIzNi4wODkgOTMuODA3MkwyMzYuMzM4IDkzLjAxNjIgMjM2Ljg1OCA5Mi4xMzE0IDI1OS40NzMgNTMuNjI5NCAyNTkuOTYxIDUyLjc5ODUgMjYwLjQwNyA1Mi4yNjU4QzI2MS4yIDUxLjQ4MzcgMjYyLjI5NiA1MSAyNjMuNTA2IDUxWk0yNjMuNTg2IDY2LjAxODNDMjYwLjczNyA2Ni4wMTgzIDI1OS4zMTMgNjcuMTI0NSAyNTkuMzEzIDY5LjMzNyAyNTkuMzEzIDY5LjYxMDIgMjU5LjMzMiA2OS44NjA4IDI1OS4zNzEgNzAuMDg4N0wyNjEuNzk1IDg0LjAxNjEgMjY1LjM4IDg0LjAxNjEgMjY3LjgyMSA2OS43NDc1QzI2Ny44NiA2OS43MzA5IDI2Ny44NzkgNjkuNTg3NyAyNjcuODc5IDY5LjMxNzkgMjY3Ljg3OSA2Ny4xMTgyIDI2Ni40NDggNjYuMDE4MyAyNjMuNTg2IDY2LjAxODNaTTI2My41NzYgODYuMDU0N0MyNjEuMDQ5IDg2LjA1NDcgMjU5Ljc4NiA4Ny4zMDA1IDI1OS43ODYgODkuNzkyMSAyNTkuNzg2IDkyLjI4MzcgMjYxLjA0OSA5My41Mjk1IDI2My41NzYgOTMuNTI5NSAyNjYuMTE2IDkzLjUyOTUgMjY3LjM4NyA5Mi4yODM3IDI2Ny4zODcgODkuNzkyMSAyNjcuMzg3IDg3LjMwMDUgMjY2LjExNiA4Ni4wNTQ3IDI2My41NzYgODYuMDU0N1oiIGZpbGw9IiNGRkU1MDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvZz48L3N2Zz4=) no-repeat 1rem/1.8rem, #b32121;
-    padding: 1rem 1rem 1rem 3.7rem;
     color: white;
+    padding: 1rem 1rem 1rem 3.7rem;
 }
 
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
-
 
 .page-heading {
     text-align: center;
@@ -96,29 +100,31 @@ a, .btn-link {
 }
 
 .suggest-btn {
-    font-family: 'Montserrat', sans-serif;
+    border-radius: 4px;
     border-width: 3px;
-    border-radius: 3px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
     padding-left: 2rem;
     padding-right: 2rem;
-    font-weight: 900;
 }
+
 .btn-outline-light:hover {
-    color: #39BAD8;
     background-color: #ffffff;
     border-color: #ffffff;
+    color: #39BAD8;
 }
 
 .suggestion-count {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     font-weight: 700;
+    color: aliceblue;
 }
 
 .btn-order {
     background-color: #ffffff;
     border: 0px solid #DDDDDD;
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
 .btn:focus,
@@ -138,7 +144,7 @@ a, .btn-link {
     }
 
 .rounded-control {
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
 .search-box {
@@ -147,8 +153,7 @@ a, .btn-link {
 
 .categories {
     background-color: #ffffff;
-    color: black;
-    border-radius: 3px;
+    border-radius: 4px;
     margin: 1rem;
     padding: 1rem;
 }
@@ -167,10 +172,9 @@ a, .btn-link {
 
 .statuses {
     background-color: #ffffff;
-    border-radius: 3px;
+    border-radius: 4px;
     margin: 1rem;
     padding: 1rem;
-    color: black;
 }
 
     .statuses div {
@@ -190,23 +194,21 @@ a, .btn-link {
 }
 
 .suggestion-entry {
-    border-radius: 3px;
+    border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
     display: grid;
     grid-template-columns: 142px 1fr 45px;
     margin: 20px 0;
-    color: black;
 }
 
 .suggestion-entry-no-votes,
 .suggestion-entry-voted,
 .suggestion-entry-not-voted {
-    /*color: black;*/
     background-color: #39bad8;
     border-bottom-left-radius: 5px;
     border-right: 3px #39BAD8 solid;
     border-top-left-radius: 5px;
-    color: black;
+    color: #ffffff;
     cursor: pointer;
     display: flex;
     flex-flow: column;
@@ -221,7 +223,7 @@ a, .btn-link {
 .suggestion-entry-no-votes {
     background-color: #dddddd;
     border-color: #dddddd;
-    color: black;
+    color: #ffffff;
 }
 
 .suggestion-entry-voted {
@@ -245,7 +247,6 @@ a, .btn-link {
 .suggestion-entry-text-title {
     flex-grow: 1;
     padding-top: 10px;
-    color: black;
 }
 
 .suggestion-entry-text-category {
@@ -329,24 +330,31 @@ a, .btn-link {
 .login-link {
     padding-left: 1rem;
 }
-
+/*
 .create-form {
     background-color: #ffffff;
-    border-radius: 3px;
+    border-radius: 5px;
+    padding: 2rem;
+}*/
+
+
+.form-layout {
+    background-color: #FFFFFF;
+    border-radius: 4px;
     padding: 2rem;
 }
 
 
-.form-layout a {
-    color: #39bad8;
-    font-weight: 700;
-}
-
-    .form-layout a:hover {
-        color: #39bad8;
+    .form-layout a {
         font-weight: 700;
-        text-decoration: underline;
+        color: #39bad8;
     }
+
+        .form-layout a:hover {
+            color: #39bad8;
+            font-weight: 700;
+            text-decoration: underline;
+        }
 
 .close-button-section {
     display: flex;
@@ -367,7 +375,7 @@ a, .btn-link {
 
 .radio-item-group label {
     border-color: #39bad8;
-    border-radius: 3px;
+    border-radius: 4px;
     border-style: solid;
     border-width: 1px;
     padding: 0.3rem 1.5rem;
@@ -392,7 +400,7 @@ a, .btn-link {
 
 .btn-main {
     background-color: #39bad8;
-    border-radius: 3px;
+    border-radius: 4px;
     border-width: 3px;
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
@@ -413,8 +421,8 @@ a, .btn-link {
 }
 
 .suggestion-detail {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 100px 1fr;
     padding: 0;
 }
 
@@ -422,12 +430,13 @@ a, .btn-link {
 .suggestion-detail-not-voted,
 .suggestion-detail-voted {
     border: 3px solid #39bad8;
+    text-align: center;
+    line-height: 1rem;
+    height: 100px;
     display: flex;
     flex-direction: column;
-    font-size: 0.8rem;
     justify-content: center;
-    line-height: 1rem;
-    text-align: center;
+    font-size: 0.8rem;
 }
 
 .suggestion-detail-no-votes {
@@ -447,17 +456,17 @@ a, .btn-link {
 }
 
 .detail-upvote {
-    font-size: 2.7rem;
+    font-size: 2.5rem;
 }
 
 .entry-upvote {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .suggestion-detail-date {
-    padding-bottom: 10px;
-    padding-top: 10px;
     text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .suggestion-detail-text {
@@ -474,7 +483,7 @@ a, .btn-link {
 }
 
 .suggestion-detail-author {
-    color: #ffffff;
+    color: #a9a9a9;
 }
 
 .suggestion-results {
@@ -526,16 +535,19 @@ a, .btn-link {
     padding-bottom: 20px;
 }
 
+
+/*////////////////////////////////*/
+
 .submission {
     background-color: #ffffff;
-    border-radius: 3px;
+    border-radius: 4px;
     margin-bottom: 1rem;
     padding: 1rem;
 }
 
 .btn-approve,
 .btn-reject {
-    border-radius: 3px;
+    border-radius: 4px;
     border-width: 3px;
     font-family: 'Montserrat', sans-serif;
     width: 100%;
@@ -570,7 +582,7 @@ a, .btn-link {
 }
 
 .approval-edit-field {
-    border-radius: 3px;
+    border-radius: 4px;
     flex: 1;
 }
 
@@ -610,23 +622,9 @@ a, .btn-link {
 }
 
 .my-submission-separator {
-    color: #ffffff;
+    color: #a9a9a9;
     height: 2px;
     opacity: 1;
-}
-
-#edit-profile-button {
-    color: #39bad8;
-    text-decoration: none;
-}
-
-    #edit-profile-button:hover {
-        color: #39bad8;
-        text-decoration: underline;
-    }
-
-#edit-profile-text {
-    padding-left: 0;
 }
 
 .suggestion-entry-bottom {
@@ -647,6 +645,7 @@ a, .btn-link {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
+    font-size: 0.8rem;
 }
 
 .btn-archive-confirm {
@@ -654,10 +653,11 @@ a, .btn-link {
 }
 
 .admin-details {
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
-.admin-set-status {
+.admin-set-statuses {
+    padding-top: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -679,6 +679,22 @@ a, .btn-link {
     color: #f9c30b;
 }
 
+/**/
+/*
+#edit-profile-button {
+    color: #39bad8;
+    text-decoration: none;
+}
+
+    #edit-profile-button:hover {
+        color: #39bad8;
+        text-decoration: underline;
+    }
+
+#edit-profile-text {
+    padding-left: 0;
+}
+
 #url-color {
     color: #39bad8;
     font-weight: 700;
@@ -687,7 +703,7 @@ a, .btn-link {
 
     #url-color:hover {
         text-decoration: underline;
-    }
+    }*/
 
 
 @media screen and (max-width: 575px) {
@@ -737,12 +753,12 @@ a, .btn-link {
     .create-form,
     .detail-form {
         margin: 0;
+        padding: 0 1rem;
         margin-bottom: 1rem;
-        padding: 1rem;
     }
 
-    .form-layout {
-        padding: 1rem;
+    .create-form {
+        margin-bottom: 1rem;
     }
 
     .submission {
