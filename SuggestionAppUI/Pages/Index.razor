@@ -6,20 +6,21 @@
 @inject IUserData userData
 @inject NavigationManager navManager
 @inject ProtectedSessionStorage sessionStorage
+@inject AuthenticationStateProvider authProvider
 
-<h1>Training Suggestions</h1>
-<div>
-	<button>Suggest</button>
+<h1 class="page-heading text-uppercase mb-4">Training Suggestions</h1>
+<div class="suggestion-container">
+	<button @onclick="LoadCreatePage" class="suggest-btn btn btn-outline-light btn-lg text-uppercase">Suggest</button>
 </div>
 
-<div>
-	<div>@suggestions?.Count Suggestions</div>
-	<div>
-		<button @onclick="(() => OrderByNew(true))">New</button>
-		<button @onclick="(() => OrderByNew(false))">Popular</button>
+<div class="row">
+	<div class="suggestion-count col-md-4 text-light mt-2">@suggestions?.Count Suggestions</div>
+	<div class="col-md-4 col-xl-5 btn-group">
+		<button class="btn btn-order @SortedByNewClass(true)" @onclick="(() => OrderByNew(true))">New</button>
+		<button class="btn btn-order @SortedByNewClass(false)" @onclick="(() => OrderByNew(false))">Popular</button>
 	</div>
-	<div>
-		<input 
+	<div class="col-md-4 col-xl-3 search-box">
+		<input class="form-control rounded-control"
 			type="text" 
 			placeholder="Search" 
 			aria-label="Search box"
@@ -27,29 +28,29 @@
 	</div>
 </div>
 
-<div>
-	<div>
+<div class="row">
+	<div class="col-md-8 col-xl-9">
 		@if(suggestions is not null)
 		{
 			<Virtualize Items="@suggestions" Context="s" OverscanCount="10">
-				<div>
-					<div>
-						<div>@GetUpvoteTopText(s)</div>
-						<span class="oi oi-caret-top"></span>
-						<div>@GetUpvoteBottomText(s)</div>
+				<div class="suggestion-entry">
+					<div class="@GetVoteClass(s)" @onclick="() => VoteUp(s)">
+						<div class="text-uppercase">@GetUpvoteTopText(s)</div>
+						<span class="oi oi-caret-top" style="font-size: 3rem;"></span>
+						<div class="text-uppercase">@GetUpvoteBottomText(s)</div>
 					</div>
-					<div>
-						<div @onclick="(() => OpenDetails(s))">
+					<div class="suggestion-entry-text">
+						<div class="suggestion-entry-text-title" @onclick="(() => OpenDetails(s))">
 							@s.Suggestion
 						</div>
 						<div>
-							<div @onclick="(() => OpenDetails(s))">
+							<div class="suggestion-entry-text-category" @onclick="(() => OpenDetails(s))">
 								@s.Category?.CategoryName
 							</div>
 						</div>
 					</div>
-					<div>
-						<div>
+					<div class="suggestion-entry-status @GetSuggestionStatusClass(s)">
+						<div class="suggestion-entry-status-text">
 							@s.SuggestionStatus?.StatusName
 						</div>
 					</div>
@@ -88,6 +89,7 @@
 	private List<SuggestionModel> suggestions;
 	private List<CategoryModel> categories;
 	private List<StatusModel> statuses;
+	private UserModel loggedInUser;
 
 	private string selectedCategory = "All";
 	private string selectedStatus = "All";
@@ -98,6 +100,77 @@
 	{
 		categories = await categoryData.GetAllCategories();
 		statuses = await statusData.GetAllStatuses();
+		await LoadAndVerifyUser();
+	}
+
+	private void LoadCreatePage()
+	{
+		if(loggedInUser is not null)
+		{
+			navManager.NavigateTo("/Create");
+		}
+		else
+		{
+			navManager.NavigateTo("/MicrosoftIdentity/Account/SignIn", true);
+		}
+	}
+
+	private async Task LoadAndVerifyUser()
+	{
+		var authState = await authProvider.GetAuthenticationStateAsync();
+		string objectId = authState.User.Claims.FirstOrDefault(c => c.Type.Contains("objectidentifier"))?.Value;
+
+		if(string.IsNullOrWhiteSpace(objectId) == false)
+		{
+			loggedInUser = await userData.GetUserFromAuthentication(objectId) ?? new();
+
+			string firstName = authState.User.Claims.FirstOrDefault(c => c.Type.Contains("givenname"))?.Value;
+			string lastName = authState.User.Claims.FirstOrDefault(c => c.Type.Contains("surname"))?.Value;
+			string displayName = authState.User.Claims.FirstOrDefault(c => c.Type.Equals("name"))?.Value;
+			string email = authState.User.Claims.FirstOrDefault(c => c.Type.Contains("email"))?.Value;
+
+			bool isDirty = false;
+
+			if (objectId.Equals(loggedInUser.ObjectIdentifier) == false)
+			{
+				isDirty = true;
+				loggedInUser.ObjectIdentifier = objectId;
+			}
+			if (firstName.Equals(loggedInUser.FirstName) == false)
+			{
+				isDirty = true;
+				loggedInUser.FirstName = firstName;
+			}
+			if (lastName.Equals(loggedInUser.LastName) == false)
+			{
+				isDirty = true;
+				loggedInUser.LastName = lastName;
+			}
+			if (displayName.Equals(loggedInUser.DisplayName) == false)
+			{
+				isDirty = true;
+				loggedInUser.DisplayName = displayName;
+			}
+			if (email.Equals(loggedInUser.EmailAddress) == false)
+			{
+				isDirty = true;
+				loggedInUser.EmailAddress = email;
+			}
+
+			if (isDirty)
+			{
+				if (string.IsNullOrWhiteSpace(loggedInUser.Id))
+				{
+					await userData.CreateUser(loggedInUser);
+				}
+				else
+				{
+					await userData.UpdateUser(loggedInUser);
+				}
+			}
+		}
+
+
 	}
 
 	protected async override Task OnAfterRenderAsync(bool firstRender)
@@ -109,6 +182,7 @@
 			StateHasChanged();
 		}
 	}
+
 
 	private async Task LoadFilterState()
 	{
@@ -194,6 +268,35 @@
 		await FilterSuggestions();
 	}
 
+	private async Task VoteUp(SuggestionModel suggestion)
+	{
+		if(loggedInUser is not null)
+		{
+			if (suggestion.Author.Id == loggedInUser.Id)
+			{
+				// Can't vote on your own suggestion.
+				return;
+			}
+
+			if (suggestion.UserVotes.Add(loggedInUser.Id) == false)
+			{
+				suggestion.UserVotes.Remove(loggedInUser.Id);
+			}
+
+			await suggestionData.UpvoteSuggestion(suggestion.Id, loggedInUser.Id);
+
+			if(isSortedByNew == false)
+			{
+				suggestions = suggestions.OrderByDescending(s => s.UserVotes.Count)
+						.ThenByDescending(s => s.DateCreated).ToList();
+			}
+		}
+		else
+		{
+			navManager.NavigateTo("/MicrosoftIdentity/Account/SignIn", true);
+		}
+	}
+
 	private string GetUpvoteTopText(SuggestionModel suggestion)
 	{
 		if(suggestion.UserVotes?.Count > 0)
@@ -202,7 +305,14 @@
 		}
 		else
 		{
-			return "Click To";
+			if(suggestion.Author.Id == loggedInUser?.Id)
+			{
+				return "Awaiting";
+			}
+			else
+			{
+				return "Click To";
+			}
 		}
 	}
 
@@ -219,5 +329,48 @@
 	private void OpenDetails(SuggestionModel suggestion)
 	{
 		navManager.NavigateTo($"/Details/{suggestion.Id}");
+	}
+
+	private string SortedByNewClass(bool isNew)
+	{
+		if (isNew == isSortedByNew)
+		{
+			return "sort-selected";
+		}
+
+		return "";
+	}
+
+	private string GetVoteClass(SuggestionModel suggestion)
+	{
+		if(suggestion.UserVotes is null || suggestion.UserVotes.Count == 0)
+		{
+			return "suggestion-entry-no-votes";
+		}
+		else if (suggestion.UserVotes.Contains(loggedInUser?.Id))
+		{
+			return "suggestion-entry-voted";
+		}
+		return "suggestion-entry-not-voted";
+	}
+
+	private string GetSuggestionStatusClass(SuggestionModel suggestion)
+	{
+		if(suggestion is null | suggestion.SuggestionStatus is null)
+		{
+			return "suggestion-entry-status-none";
+		}
+		
+		string output = suggestion.SuggestionStatus.StatusName switch
+		{
+			"Completed" => "suggestion-entry-status-completed",
+			"Watching" => "suggestion-entry-status-watching",
+			"Upcoming" => "suggestion-entry-status-upcoming",
+			"Dismissed" => "suggestion-entry-status-dismissed",
+			_ => "suggestion-entry-status-none",
+		};
+
+		return output;
+
 	}
 }
